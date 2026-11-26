@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="黄小雷的个人简历网站 · 求职意向：行政文员 / 行政支持 · 计算机专业背景，擅长文书档案、会务组织、台账数据与流程协调">
+<title>黄小雷 · 行政文员 | 个人简历</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+  :root{
+    --paper:#faf7f2;
+    --card:#ffffff;
+    --ink:#26303b;
+    --ink-soft:#5a6673;
+    --ink-faint:#8b95a1;
+    --navy:#2f5d8a;
+    --navy-deep:#1e3a5f;
+    --accent:#c2703d;
+    --line:#e7e1d8;
+    --serif:"Noto Serif SC","Songti SC","SimSun",serif;
+    --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1!important;transform:none!important;transition:none!important}
+  }
+  body{
+    font-family:var(--sans);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* ===== 顶部导航 ===== */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,247,242,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1000px;margin:0 auto;padding:0 24px;
+    display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px;
+  }
+  .nav-brand{display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+  .nav-brand .name{font-family:var(--serif);font-weight:900;font-size:19px;color:var(--navy-deep)}
+  .nav-brand .tag{font-size:12px;color:var(--ink-faint);letter-spacing:.12em}
+  .nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{
+    display:flex;align-items:center;
+    padding:6px 12px;border-radius:999px;text-decoration:none;
+    font-size:13.5px;color:var(--ink-soft);white-space:nowrap;
+    transition:color .2s,background .2s;
+  }
+  .nav-links a:hover{color:var(--navy-deep);background:#eef1f4}
+  .nav-links a.active{color:#fff;background:var(--navy)}
+  /* ===== 布局 ===== */
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  section{padding:64px 0 8px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:30px}
+  .sec-head .no{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--accent);letter-spacing:.1em}
+  .sec-head h2{font-family:var(--serif);font-size:27px;font-weight:900;color:var(--navy-deep);letter-spacing:.04em}
+  .sec-head .rule{flex:1;height:1px;background:var(--line);align-self:center}
+  /* ===== Hero ===== */
+  .hero{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1fr 240px;gap:48px;align-items:center}
+  .hero-kicker{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .hero-kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+  .hero-kicker span{font-size:13px;letter-spacing:.28em;color:var(--ink-faint)}
+  .hero h1{font-family:var(--serif);font-size:52px;font-weight:900;color:var(--navy-deep);line-height:1.25;letter-spacing:.06em}
+  .hero-role{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+  .hero-role .role{font-size:19px;font-weight:700;color:var(--ink)}
+  .hero-role .sep{color:var(--line)}
+  .hero-role .sub{font-size:15px;color:var(--ink-soft)}
+  .hero-desc{font-size:15px;color:var(--ink-soft);max-width:56ch;margin-bottom:26px}
+  .hero-desc strong{color:var(--navy-deep);font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{
+    display:flex;align-items:center;gap:8px;
+    background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:7px 16px;font-size:13.5px;color:var(--ink-soft);
+    text-decoration:none;transition:border-color .2s,color .2s;
+  }
+  a.chip:hover{border-color:var(--navy);color:var(--navy-deep)}
+  .chip svg{width:15px;height:15px;flex:none;stroke:var(--accent)}
+  .hero-photo{position:relative}
+  .hero-photo::before{
+    content:"";position:absolute;inset:14px -14px -14px 14px;
+    border:1.5px solid var(--navy);border-radius:6px;opacity:.35;
+  }
+  .hero-photo img{
+    position:relative;display:block;width:100%;aspect-ratio:5/7;object-fit:cover;
+    border-radius:6px;box-shadow:0 12px 32px rgba(30,58,95,.16);
+  }
+  /* ===== 教育背景 ===== */
+  .edu-card{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:30px 34px;box-shadow:0 2px 10px rgba(38,48,59,.04);
+  }
+  .edu-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+  .edu-top h3{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--ink)}
+  .edu-top .date{font-size:13.5px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+  .edu-major{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:14.5px;color:var(--ink-soft);margin-bottom:16px}
+  .edu-major .badge{background:#eef3f8;color:var(--navy-deep);border-radius:4px;padding:1px 10px;font-size:12.5px;font-weight:500}
+  .edu-stats{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px}
+  .stat{
+    display:flex;align-items:baseline;gap:8px;
+    background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px 18px;
+  }
+  .stat .num{font-family:var(--serif);font-size:21px;font-weight:900;color:var(--accent)}
+  .stat .lbl{font-size:12.5px;color:var(--ink-faint)}
+  .edu-row{display:flex;gap:12px;font-size:14px;margin-top:10px}
+  .edu-row .k{flex:none;font-weight:700;color:var(--navy-deep)}
+  .edu-row .v{color:var(--ink-soft)}
+  /* ===== 专业技能 ===== */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .skill{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:22px 22px 18px;transition:transform .25s,box-shadow .25s;
+  }
+  .skill:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(38,48,59,.08)}
+  .skill-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .skill-head .glyph{
+    flex:none;width:34px;height:34px;border-radius:8px;
+    display:flex;align-items:center;justify-content:center;
+    background:#eef3f8;color:var(--navy-deep);
+    font-family:var(--serif);font-weight:900;font-size:16px;
+  }
+  .skill-head h3{font-size:15.5px;font-weight:700;color:var(--ink)}
+  .skill p{font-size:13px;color:var(--ink-soft);line-height:1.8}
+  /* ===== 工作经历 ===== */
+  .timeline{position:relative;padding-left:26px}
+  .timeline::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1.5px;background:var(--line)}
+  .job{position:relative;margin-bottom:36px}
+  .job::before{
+    content:"";position:absolute;left:-26px;top:10px;width:11px;height:11px;border-radius:50%;
+    background:var(--paper);border:2.5px solid var(--navy);
+  }
+  .job-card{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:26px 30px;box-shadow:0 2px 10px rgba(38,48,59,.04);
+  }
+  .job-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+  .job-top h3{font-family:var(--serif);font-size:18.5px;font-weight:700;color:var(--ink)}
+  .job-top .date{font-size:13px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+  .job-role{display:flex;align-items:center;gap:10px;margin:4px 0 14px}
+  .job-role .r{font-size:14px;font-weight:700;color:var(--accent)}
+  .job-role .note{font-size:12.5px;color:var(--ink-faint)}
+  .job ul{list-style:none}
+  .job li{
+    position:relative;padding-left:18px;font-size:14px;color:var(--ink-soft);
+    margin-bottom:8px;line-height:1.85;
+  }
+  .job li::before{content:"";position:absolute;left:2px;top:.85em;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.7}
+  .job li strong{color:var(--navy-deep);font-weight:700}
+  .job li .hl{color:var(--accent);font-weight:700}
+  /* ===== 个人评价 ===== */
+  .about-card{
+    background:linear-gradient(135deg,#1e3a5f 0%,#2f5d8a 100%);
+    border-radius:12px;padding:38px 42px;color:#e8eef5;position:relative;overflow:hidden;
+  }
+  .about-card::before{
+    content:"评";position:absolute;right:-18px;bottom:-52px;
+    font-family:var(--serif);font-size:190px;font-weight:900;color:rgba(255,255,255,.05);line-height:1;
+  }
+  .about-card p{position:relative;font-size:14.5px;line-height:2;margin-bottom:14px}
+  .about-card p:last-child{margin-bottom:0}
+  .about-card strong{color:#ffd9b8;font-weight:700}
+  /* ===== 页脚 ===== */
+  footer{margin-top:72px;border-top:1px solid var(--line);padding:34px 0 44px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  .foot-contact{display:flex;flex-wrap:wrap;gap:18px;font-size:13.5px;color:var(--ink-soft)}
+  .foot-contact a{color:var(--navy-deep);text-decoration:none}
+  .foot-contact a:hover{text-decoration:underline}
+  .foot-meta{font-size:12px;color:var(--ink-faint)}
+  /* ===== 返回顶部 / 打印 ===== */
+  .fab{
+    position:fixed;right:26px;bottom:26px;z-index:60;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .fab button{
+    width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+    background:var(--card);color:var(--navy-deep);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 14px rgba(38,48,59,.12);transition:transform .2s,opacity .3s;
+    font-size:16px;
+  }
+  .fab button:hover{transform:translateY(-2px)}
+  .fab button svg{width:18px;height:18px;stroke:var(--navy-deep)}
+  #toTop{opacity:0;pointer-events:none}
+  #toTop.show{opacity:1;pointer-events:auto}
+  /* ===== 滚动浮现 ===== */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  /* ===== 响应式 ===== */
+  @media (max-width:860px){
+    .skills-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:680px){
+    .hero{padding:48px 0 40px}
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    .hero-photo{max-width:220px;margin:0 auto;order:-1}
+    .hero h1{font-size:40px;text-align:center}
+    .hero-kicker,.hero-role,.chips{justify-content:center}
+    .hero-desc{margin-left:auto;margin-right:auto;text-align:center}
+    .skills-grid{grid-template-columns:1fr}
+    .nav-brand .tag{display:none}
+    section{padding:48px 0 6px}
+    .edu-card,.job-card{padding:22px 20px}
+    .about-card{padding:28px 24px}
+    .timeline{padding-left:22px}
+    .job::before{left:-22px}
+  }
+  /* ===== 打印 ===== */
+  @media print{
+    .nav,.fab{display:none}
+    body{background:#fff}
+    .reveal{opacity:1;transform:none}
+    .skill:hover{transform:none;box-shadow:none}
+    .hero{padding:20px 0}
+    section{padding:24px 0 4px;break-inside:avoid-page}
+    .job,.edu-card,.skill{break-inside:avoid-page}
+    .about-card{background:#1e3a5f;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 导航 ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><span class="name">黄小雷</span><span class="tag">个人简历 · RESUME</span></div>
+    <div class="nav-links">
+      <a href="#edu"><span>教育背景</span></a>
+      <a href="#skills"><span>专业技能</span></a>
+      <a href="#work"><span>工作经历</span></a>
+      <a href="#about"><span>个人评价</span></a>
+      <a href="#contact"><span>联系</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-kicker"><span class="dot"></span><span>求职意向 · 行政方向</span></div>
+      <h1>黄小雷</h1>
+      <div class="hero-role">
+        <span class="role">行政文员 / 行政支持</span>
+        <span class="sep">|</span>
+        <span class="sub">计算机科学与技术 · 本科</span>
+      </div>
+      <p class="hero-desc">计算机专业背景 + 行政实务经验，擅长<strong>文书档案、会务组织、台账数据与流程协调</strong>。做事细致有条理，习惯按 SOP 推进、重视信息核对与过程留痕，善用 AI 工具提升文档与资料处理效率。</p>
+      <div class="chips">
+        <a class="chip" href="tel:18370595926">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>18370595926</span>
+        </a>
+        <a class="chip" href="mailto:leories@foxmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          <span>leories@foxmail.com</span>
+        </a>
+        <span class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>江西 · 宜春</span>
+        </span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/photo.jpg" alt="黄小雷证件照">
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ===== 教育背景 ===== -->
+  <section id="edu">
+    <div class="sec-head reveal"><span class="no">01</span><h2>教育背景</h2><span class="rule"></span></div>
+    <div class="edu-card reveal">
+      <div class="edu-top"><h3>南昌航空大学科技学院</h3><span class="date">2022.09 – 2026.06</span></div>
+      <div class="edu-major"><span class="badge">本科</span><span>计算机科学与技术</span></div>
+      <div class="edu-stats">
+        <div class="stat"><span class="num">3.5<small style="font-size:13px">/4.0</small></span><span class="lbl">GPA</span></div>
+        <div class="stat"><span class="num">前 8%</span><span class="lbl">专业排名</span></div>
+        <div class="stat"><span class="num">3 次</span><span class="lbl">校级二等奖学金</span></div>
+      </div>
+      <div class="edu-row"><span class="k">荣誉奖项</span><span class="v">CET-4 · 计算机二级（MS Office）· 校级二等奖学金（3次）· 外教社词达人杯校赛二等奖</span></div>
+      <div class="edu-row"><span class="k">主修课程</span><span class="v">Python 程序设计、数据库原理、计算机网络、操作系统、JavaEE 平台开发与应用等</span></div>
+    </div>
+  </section>
+
+  <!-- ===== 专业技能 ===== -->
+  <section id="skills">
+    <div class="sec-head reveal"><span class="no">02</span><h2>专业技能</h2><span class="rule"></span></div>
+    <div class="skills-grid">
+      <div class="skill reveal"><div class="skill-head"><span class="glyph">办</span><h3>办公软件</h3></div><p>熟练 Word / Excel / PPT，独立完成通知、纪要、周报起草与排版；Excel 台账维护、数据核对、常用函数与图表（计算机二级）。</p></div>
+      <div class="skill reveal"><div class="skill-head"><span class="glyph">文</span><h3>公文写作</h3></div><p>能起草通知、请示、会议纪要、周报等常用文书，熟悉标题、称谓、落款等格式规范，文字准确、条理清晰。</p></div>
+      <div class="skill reveal"><div class="skill-head"><span class="glyph">档</span><h3>文书档案</h3></div><p>熟悉文件分类、编号、归档与版本管理，重视信息核对与留痕，能输出格式规范、口径统一的书面材料。</p></div>
+      <div class="skill reveal"><div class="skill-head"><span class="glyph">会</span><h3>会务组织</h3></div><p>可独立完成会议室预订、议程与材料准备、签到与现场协调、纪要整理分发，做到会前筹备、会后跟进闭环。</p></div>
+      <div class="skill reveal"><div class="skill-head"><span class="glyph">账</span><h3>台账与数据</h3></div><p>能用 Excel 完成数据录入、筛选核对、分类汇总与图表呈现，按月输出台账及统计报表，对数字敏感、重视复核。</p></div>
+      <div class="skill reveal"><div class="skill-head"><span class="glyph">协</span><h3>事务协调</h3></div><p>习惯按 SOP 推进，可并行跟进多项事务，做好会务日程安排、多方信息同步与结果反馈。</p></div>
+      <div class="skill reveal"><div class="skill-head"><span class="glyph">密</span><h3>保密与规范</h3></div><p>了解人事、财务等敏感资料的权限管理与保密要求，习惯按制度流程办事、重要事项留痕备查，工作细致、有责任心。</p></div>
+      <div class="skill reveal"><div class="skill-head"><span class="glyph">系</span><h3>系统适应</h3></div><p>计算机专业背景，用过 TAPD、禅道、Git、Jenkins 等流程协作工具，可快速上手 OA、考勤、资产系统。</p></div>
+      <div class="skill reveal"><div class="skill-head"><span class="glyph">语</span><h3>语言与工具</h3></div><p>CET-4，英语读写良好；熟练用 AI 工具辅助文档起草、资料整理与信息核对。</p></div>
+    </div>
+  </section>
+
+  <!-- ===== 工作经历 ===== -->
+  <section id="work">
+    <div class="sec-head reveal"><span class="no">03</span><h2>工作经历</h2><span class="rule"></span></div>
+    <div class="timeline">
+
+      <div class="job reveal">
+        <div class="job-card">
+          <div class="job-top"><h3>深圳埃哲思数睿科技有限公司</h3><span class="date">2025.10 – 2025.12</span></div>
+          <div class="job-role"><span class="r">行政文员</span><span class="note">行政事务全流程实操</span></div>
+          <ul>
+            <li><strong>前台接待：</strong>负责来访登记、电话转接、快递信函收发与信息转达。</li>
+            <li><strong>文书档案：</strong>起草并归档通知、会议纪要、周报，按类别编号建立电子与纸质档案，确保资料完整可检索。</li>
+            <li><strong>台账物资：</strong>用 Excel 维护办公用品出入库与考勤请假台账，定期盘点，输出月度统计表。</li>
+            <li><strong>会务协调：</strong>安排会议室、日程与差旅，准备材料并分发纪要；对接行政、人事、财务，跟进事项节点并反馈结果。</li>
+            <li><strong>考勤与单据：</strong>协助收集核对员工考勤、请假与外出单据，按月汇总异常记录并提交人事复核，保证数据准确、按时报送。</li>
+            <li><strong>采购与报销：</strong>按流程提交办公用品采购申请，完成比价、收货验收与台账登记；整理差旅、招待等报销单据，核对票据金额后递交财务。</li>
+            <li><strong>通知与保密：</strong>负责公司通知、公告的发布与回执收集，维护内部通讯录及共享文档权限；对人事、财务等敏感资料按权限保管，严格遵守保密要求。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-card">
+          <div class="job-top"><h3>深圳软牛科技集团股份有限公司</h3><span class="date">2026.02 – 2026.07</span></div>
+          <div class="job-role"><span class="r">软件测试工程师</span><span class="note">流程规范 · 文档归档 · 跨部门协同</span></div>
+          <ul>
+            <li>负责海外 AI 生成平台全流程测试，平台聚合多厂商 AI 能力，覆盖 SEO/PPC 双渠道，支持 8 种国际化语言，落地 I2V、R2V、AI MV、图文特效等十余项生成功能验证。</li>
+            <li>依据 SOP 业务规范设计分层级测试用例，将积分消耗场景设置为高优先级，包括功能操作区不同渠道、Prompt 显隐等差异化业务规则。</li>
+            <li>开展 Web 端功能、业务流测试；开展 Android 真机兼容性测试，使用 ADB 抓取设备日志、辅助复现与定位 APP 问题，验证缓存、页面渲染、多机型展示等兼容性场景，对照需求文档完成测试核对与记录。</li>
+            <li>使用 TAPD 管理缺陷，对不确定业务规则及时同步团队对齐，跟进发版流程，把控版本交付质量。</li>
+            <li>参与搭建基于 Claude 的 AI 辅助测试用例生成流程：将历史测试经验库结构化沉淀为 Prompt 模板，结合产品需求文档，由 AI 自动生成初始测试用例，<span class="hl">单版本用例设计耗时降低约 60%</span>。</li>
+            <li><strong>文档与归档：</strong>按版本整理测试点清单、执行记录与结果汇总，编制交付材料并分类归档，保证资料完整、口径统一、可追溯。</li>
+            <li><strong>跨部门协同：</strong>与产品、研发、运营同步需求口径与排期，对不确定的业务规则主动发起对齐，跟进问题直至闭环，具备多方沟通与进度跟进经验。</li>
+            <li><strong>会议与汇报：</strong>参与版本例会，记录会议要点与待办事项，跟踪责任人及完成节点，定期汇总进度并输出书面报告。</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 个人评价 ===== -->
+  <section id="about">
+    <div class="sec-head reveal"><span class="no">04</span><h2>个人评价</h2><span class="rule"></span></div>
+    <div class="about-card reveal">
+      <p>做事<strong>细致有条理、责任心强</strong>，习惯按规范流程推进工作，重视信息核对与过程留痕；能在多任务并行时主动排定优先级、及时同步进度，服务意识好，乐于配合团队完成各类日常行政事务。</p>
+      <p>计算机专业背景，<strong>学习能力强</strong>，能快速上手 OA、考勤、资产等办公系统，并善用 AI 工具提升文档起草与资料整理效率；希望从基础事务扎实做起，在<strong>行政支持与流程管理方向</strong>长期沉淀。</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== 页脚 ===== -->
+<footer id="contact">
+  <div class="wrap foot">
+    <div class="foot-contact">
+      <span>📞 <a href="tel:18370595926">18370595926</a></span>
+      <span>✉️ <a href="mailto:leories@foxmail.com">leories@foxmail.com</a></span>
+      <span>📍 江西 · 宜春</span>
+    </div>
+    <div class="foot-meta"><span>黄小雷 · 个人简历 | 托管于 GitHub Pages</span></div>
+  </div>
+</footer>
+
+<!-- ===== 浮动按钮 ===== -->
+<div class="fab">
+  <button id="printBtn" title="打印 / 保存为 PDF" aria-label="打印简历">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+  </button>
+  <button id="toTop" title="返回顶部" aria-label="返回顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+</div>
+
+<script>
+(function(){
+  /* 滚动浮现 */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:.08});
+    revealEls.forEach(function(el){ io.observe(el); });
+  }else{
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* 导航高亮 */
+  var links = document.querySelectorAll('.nav-links a');
+  var secs = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if(el) secs.push({id:id, el:el, a:a});
+  });
+  function setActive(){
+    var pos = window.scrollY + 120, current = null;
+    secs.forEach(function(s){ if(s.el.offsetTop <= pos) current = s; });
+    links.forEach(function(a){ a.classList.remove('active'); });
+    if(current) current.a.classList.add('active');
+    document.getElementById('toTop').classList.toggle('show', window.scrollY > 500);
+  }
+  window.addEventListener('scroll', setActive, {passive:true});
+  setActive();
+
+  /* 浮动按钮 */
+  document.getElementById('toTop').addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+  document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+})();
+</script>
+</body>
+</html>
